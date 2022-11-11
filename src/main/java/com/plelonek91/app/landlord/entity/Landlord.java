@@ -1,9 +1,13 @@
 package com.plelonek91.app.landlord.entity;
 
-import com.plelonek91.app.reservation.entity.Reservation;
-import lombok.*;
+import com.plelonek91.app.facility.entity.Facility;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -21,8 +25,6 @@ public class Landlord {
 
     private String name;
 
-    @OneToOne
-    @JoinColumn(name = "reservation_id")
-    private Reservation reservation;
-
+    @OneToMany
+    private List<Facility> facilities;
 }
