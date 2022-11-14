@@ -1,5 +1,6 @@
 package com.plelonek91.app.landlord.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.plelonek91.app.facility.entity.Facility;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,5 +27,6 @@ public class Landlord {
     private String name;
 
     @OneToMany
+    @JsonManagedReference
     private List<Facility> facilities;
 }

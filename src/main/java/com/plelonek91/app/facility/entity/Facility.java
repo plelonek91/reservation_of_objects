@@ -1,5 +1,6 @@
 package com.plelonek91.app.facility.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.plelonek91.app.landlord.entity.Landlord;
 import lombok.*;
 
@@ -28,6 +29,7 @@ public class Facility {
     private String description;
 
     @OneToOne
+    @JsonBackReference
     private Landlord landlord;
 
 }
